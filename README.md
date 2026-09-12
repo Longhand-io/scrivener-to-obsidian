@@ -4,7 +4,7 @@ Turn a Scrivener project into an Obsidian vault **without losing your history.**
 
 One static binary. Go standard library only. No pandoc, no network, and your `.scriv` package is never touched.
 
-> Part of [Longhand](https://grassclaw.github.io/longhand-site/), a writing studio for Obsidian. This importer writes the Longhand vault spec, so the plugin picks your projects up as-is. It is also useful on its own.
+> Part of [Longhand](https://longhand-io.github.io/longhand-site/), a writing studio for Obsidian. This importer writes the Longhand vault spec, so the plugin picks your projects up as-is. It is also useful on its own.
 
 ## What happens to your project
 
@@ -85,7 +85,7 @@ Word-Count: 2417
 ## Quick start
 
 ```sh
-go install github.com/grassclaw/scrivener-to-obsidian/cmd/scriv2obsidian@latest
+go install github.com/longhand-io/scrivener-to-obsidian/cmd/scriv2obsidian@latest
 
 # see what is inside before you convert anything
 scriv2obsidian inspect ~/Dropbox/Apps/Scrivener/Novel.scriv
@@ -116,7 +116,7 @@ Run it as many times as you like; the source package is read-only to the tool.
 
 ## Why another converter
 
-The existing tools export text and folders. None carry snapshots across, and most drop notes, footnotes, and links. This one is built around a small written [vault spec](https://github.com/grassclaw/longhand/blob/main/docs/spec.md) so the output is usable by any tool, with or without a plugin, and it reads RTF itself because pandoc's RTF reader silently deletes hyperlink fields, which is where Scrivener keeps comments and internal links.
+The existing tools export text and folders. None carry snapshots across, and most drop notes, footnotes, and links. This one is built around a small written [vault spec](https://github.com/Longhand-io/longhand/blob/main/docs/spec.md) so the output is usable by any tool, with or without a plugin, and it reads RTF itself because pandoc's RTF reader silently deletes hyperlink fields, which is where Scrivener keeps comments and internal links.
 
 ## Status
 

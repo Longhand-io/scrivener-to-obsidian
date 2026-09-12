@@ -2,7 +2,7 @@
 
 > Hand-written public roadmap. `docs/PHASES.md` is the engineering ledger and the source of truth for delivery state. Edit by hand.
 
-scriv2obsidian turns a Scrivener 3 project into a vault that follows the [Longhand spec](https://github.com/grassclaw/longhand/blob/main/docs/spec.md), and replays every Scrivener snapshot as history. It is a single Go binary with no dependencies beyond the standard library, and it never modifies the source package.
+scriv2obsidian turns a Scrivener 3 project into a vault that follows the [Longhand spec](https://github.com/Longhand-io/longhand/blob/main/docs/spec.md), and replays every Scrivener snapshot as history. It is a single Go binary with no dependencies beyond the standard library, and it never modifies the source package.
 
 ## Shipped
 
