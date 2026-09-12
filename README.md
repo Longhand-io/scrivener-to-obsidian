@@ -122,6 +122,8 @@ The existing tools export text and folders. None carry snapshots across, and mos
 
 Pre-release. The RTF reader is written; binder parsing, layout, snapshot replay, and the CLI are in progress. The flag table above is the target interface.
 
-## License
+## License and affiliation
+
+An independent project, not affiliated with or endorsed by Literature & Latte, the makers of Scrivener, or by Obsidian. Those names are trademarks of their respective owners.
 
 MIT.
