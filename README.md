@@ -4,7 +4,7 @@ Turn a Scrivener project into an Obsidian vault **without losing your history.**
 
 One static binary. Go standard library only. No pandoc, no network, and your `.scriv` package is never touched.
 
-> Part of [Longhand](https://github.com/grassclaw/longhand), a writing studio for Obsidian. This importer writes the Longhand vault spec, so the plugin picks your projects up as-is. It is also useful on its own.
+> Part of [Longhand](https://grassclaw.github.io/longhand-site/), a writing studio for Obsidian. This importer writes the Longhand vault spec, so the plugin picks your projects up as-is. It is also useful on its own.
 
 ## What happens to your project
 
