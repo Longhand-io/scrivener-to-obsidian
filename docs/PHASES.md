@@ -1,7 +1,7 @@
 ---
 repo: scrivener-to-obsidian
 schema: phases/v1
-current_phase: I1
+current_phase: I2
 updated: 2026-09-12
 updated_by: grassclaw
 
@@ -22,20 +22,21 @@ phases:
 
   - id: I1
     title: Binder parsing
-    status: in_progress
+    status: done
+    completed: 2026-09-12
     depends_on: []
     subphases:
       - id: I1.1
         title: scrivx to a project tree
-        status: in_progress
+        status: done
         deliverables:
-          - { id: I1.1-d1, done: false, desc: "internal/scrivx: Project and Item; labels, statuses, keywords, custom metadata definitions; per-item label, status, keywords, custom values, include, dates, bookmarks; trash detection" }
+          - { id: I1.1-d1, done: true, desc: "internal/scrivx: Project and Item; labels, statuses, keywords, custom metadata definitions; per-item label, status, keywords, custom values, include, dates, bookmarks; trash detection" }
         acceptance:
-          - { id: I1.1-a1, met: false, check: "fixture scrivx parses to the expected tree; a real project's item count equals grep -c BinderItem", method: unit }
+          - { id: I1.1-a1, met: true, check: "fixture scrivx parses to the expected tree; a real project's item count equals grep -c BinderItem", method: unit, note: "2026-09-12: TestParse green; item counts matched grep on 14 real Scrivener 3 projects" }
 
   - id: I2
     title: Layout and frontmatter
-    status: planned
+    status: in_progress
     depends_on: [I1]
     subphases:
       - id: I2.1
