@@ -6,7 +6,7 @@ scriv2obsidian turns a Scrivener 3 project into a vault that follows the [Longha
 
 ## Shipped
 
-- **RTF reader.** Tokenizer, parser, and Markdown renderer for Scrivener's Cocoa RTF: paragraphs, line breaks, bold, italic, underline, strike, super and subscript, lists, tabs, hyperlink fields including `scrivcmt://` comment anchors and `scrivlnk://` internal links, cp1252 and Unicode escapes, inline images. Built because pandoc's RTF reader drops hyperlink fields, text included. Not yet covered by tests.
+- **RTF reader.** Tokenizer, parser, and Markdown renderer for Scrivener's Cocoa RTF: paragraphs, line breaks, bold, italic, underline, strike, super and subscript, lists, tabs, hyperlink fields including `scrivcmt://` comment anchors and `scrivlnk://` internal links, cp1252 and Unicode escapes, inline images. Built because pandoc's RTF reader drops hyperlink fields, text included. Unit tests cover the reader.
 
 ## Next: v0.1.0
 
