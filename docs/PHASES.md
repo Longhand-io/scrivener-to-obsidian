@@ -18,7 +18,7 @@ phases:
         deliverables:
           - { id: I0.1-d1, done: true, desc: "internal/rtf: token.go, parse.go, render.go; hyperlink fields preserved; poetry mode; plain text and word count" }
         acceptance:
-          - { id: I0.1-a1, met: false, check: "unit tests cover bold, italic, lists, links, comment anchors, unicode, images, poetry joins", method: unit }
+          - { id: I0.1-a1, met: true, check: "unit tests cover bold, italic, lists, links, comment anchors, unicode, images, poetry joins", method: unit, note: "2026-09-12: TestMarkdown and TestParse green on synthetic RTF" }
 
   - id: I1
     title: Binder parsing
