@@ -116,6 +116,10 @@ Run it as many times as you like; the source package is read-only to the tool.
 
 **Two behaviours worth knowing.** Trash is skipped, including snapshots of trashed documents; `inspect` shows those separately, and `-include-trash` brings them along. When Scrivener left two snapshot files for one instant, one per time zone the Mac was in, the importer keeps one if the bytes are identical and both if they differ.
 
+## Questions
+
+[FAQ](docs/FAQ.md): backlinks on research files, numbering, folder notes, trash, snapshot counts, poetry, what formatting survives, iCloud.
+
 ## Why another converter
 
 The existing tools export text and folders. None carry snapshots across, and most drop notes, footnotes, and links. This one is built around a small written [vault spec](https://github.com/Longhand-io/longhand/blob/main/docs/spec.md) so the output is usable by any tool, with or without a plugin, and it reads RTF itself because pandoc's RTF reader silently deletes hyperlink fields, which is where Scrivener keeps comments and internal links.
