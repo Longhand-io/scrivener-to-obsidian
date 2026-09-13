@@ -91,6 +91,9 @@ func render(md string, figureDir string) (string, error) {
 			if cur != nil {
 				cur.body = append(cur.body, strings.TrimSpace(string(b)))
 			}
+		case strings.HasPrefix(t, "<!--"):
+			// an ordinary HTML comment in the markdown: notes for editors, not for the page
+			flush()
 		case t == "":
 			flush()
 		default:
