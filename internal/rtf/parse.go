@@ -194,8 +194,6 @@ func (p *parser) text(b []byte) {
 		}
 	}
 	switch {
-	case p.cur.pict != nil:
-		p.cur.pict.hex.Write(b)
 	case p.cur.inFldinst:
 		if p.cur.field != nil {
 			p.cur.field.url.Write(b)
@@ -203,7 +201,10 @@ func (p *parser) text(b []byte) {
 	case p.cur.listtext != nil:
 		p.cur.listtext.Write(b)
 	case p.cur.skip:
+		// covers {\*\blipuid ...} inside a picture, whose hex is an id, not image data
 		return
+	case p.cur.pict != nil:
+		p.cur.pict.hex.Write(b)
 	default:
 		p.emit(Run{Text: string(b), Style: p.cur.style, URL: p.linkURL()})
 	}
@@ -303,12 +304,13 @@ func (p *parser) control(t token) {
 	case "uc":
 		p.cur.uc = t.param
 	case "u":
-		p.skipChars = p.cur.uc
 		n := t.param
 		if n < 0 {
 			n += 65536
 		}
 		p.text([]byte(string(rune(n))))
+		// the fallback characters that follow a \u escape are skipped, not the escape itself
+		p.skipChars = p.cur.uc
 	case "emdash":
 		p.text([]byte("—"))
 	case "endash":

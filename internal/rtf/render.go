@@ -45,7 +45,12 @@ func Escape(s string) string {
 
 func escapeLineStart(s string) string {
 	if m := reLeadEsc.FindStringSubmatchIndex(s); m != nil {
-		return s[:m[4]] + "\\" + s[m[4]:]
+		start, end := m[4], m[5]
+		if s[start] >= '0' && s[start] <= '9' {
+			// "1. text" becomes "1\. text": the marker is the punctuation, not the digits
+			return s[:end-1] + "\\" + s[end-1:]
+		}
+		return s[:start] + "\\" + s[start:]
 	}
 	if m := reHashEsc.FindStringSubmatchIndex(s); m != nil {
 		return s[:m[4]] + "\\" + s[m[4]:]
