@@ -1,5 +1,7 @@
 # FAQ
 
+Also published, with pictures, at https://longhand-io.github.io/longhand-site/faq.html. Keep the two in step.
+
 Questions writers ask in the first week with an imported vault. If yours is not here, open a [discussion](https://github.com/Longhand-io/longhand/discussions).
 
 ## It looks like ordinary Obsidian. Where is the binder, the inspector, the snapshots tab?
