@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+
 // faqgen renders docs/FAQ.md into the FAQ region of the Longhand site page, or checks that it already matches.
 //
 //	go run ./hack/faqgen -md docs/FAQ.md -html ../longhand-site/faq.html            # rewrite the region

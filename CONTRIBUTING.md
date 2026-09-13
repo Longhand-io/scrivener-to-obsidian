@@ -15,7 +15,7 @@ Go 1.23 or later, standard library only; `git` on PATH for the snapshot tests.
 hack/ci.sh
 ```
 
-That runs gofmt, go vet, go build, and go test with the race detector. It is the gate named in every PR.
+That runs the licence-header check, gofmt, go vet, go build, and go test with the race detector. It is the gate named in every PR.
 
 ## Developer Certificate of Origin
 
@@ -25,7 +25,9 @@ Every commit must carry a `Signed-off-by:` line matching its author, which certi
 git commit -s
 ```
 
-That is the whole contributor agreement. There is no CLA.
+That is the whole contributor agreement. There is no CLA, and no real-name requirement: sign off with a name you use consistently and an email that reaches you. Contributions are licensed under Apache-2.0 and the copyright stays with you; the NOTICE file credits the Longhand Authors collectively.
+
+Every Go file starts with the SPDX line; `hack/ci.sh` checks it.
 
 ## Commit messages
 

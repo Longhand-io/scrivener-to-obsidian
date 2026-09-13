@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+
 // Command scriv2obsidian converts Scrivener 3 projects into Longhand vaults.
 package main
 

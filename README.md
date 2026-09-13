@@ -134,6 +134,4 @@ go install github.com/longhand-io/scrivener-to-obsidian/cmd/scriv2obsidian@main
 
 ## License and affiliation
 
-An independent project, not affiliated with or endorsed by Literature & Latte, the makers of Scrivener, or by Obsidian. Those names are trademarks of their respective owners.
-
-MIT.
+Apache License 2.0, copyright 0xSpectra LLC and the Longhand Authors; see NOTICE. An independent project, not affiliated with or endorsed by Literature & Latte, the makers of Scrivener, or by Obsidian. Those names are trademarks of their respective owners.

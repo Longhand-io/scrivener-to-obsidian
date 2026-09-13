@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+
 // Package convert turns a parsed Scrivener project into a vault that follows the Longhand spec.
 package convert
 
