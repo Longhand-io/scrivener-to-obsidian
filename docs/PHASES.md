@@ -18,7 +18,7 @@ phases:
         deliverables:
           - { id: I0.1-d1, done: true, desc: "internal/rtf: token.go, parse.go, render.go; hyperlink fields preserved; poetry mode; plain text and word count" }
         acceptance:
-          - { id: I0.1-a1, met: false, check: "unit tests cover bold, italic, lists, links, comment anchors, unicode, images, poetry joins", method: unit, note: "covered indirectly by the convert fixture; direct rtf tests still open, issue [rtf] Unit tests" }
+          - { id: I0.1-a1, met: true, check: "unit tests cover bold, italic, lists, links, comment anchors, unicode, images, poetry joins", method: unit, note: "2026-09-12: internal/rtf/rtf_test.go; the tests found two real bugs on landing (blipuid hex leaking into image bytes, \\u escapes emitting the fallback instead of the character), both fixed in the same change" }
 
   - id: I1
     title: Binder parsing

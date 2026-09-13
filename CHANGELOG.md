@@ -16,3 +16,8 @@ Not yet cut. Scope in `ROADMAP.md`.
 - Snapshots written to the `_snapshots/` files store, and with `-git` replayed as commits with original dates and `Snapshot-*` trailers, followed by one import commit per project.
 - `convert`, `inspect`, `-dry-run`, and a `.scriv2obsidian.json` manifest per project.
 - Validated on fourteen real projects; see the README.
+
+### Fixed
+
+- Inline PNG images were written with the picture's `blipuid` hex prepended, which made them unreadable. JPEGs were unaffected.
+- A `\\u` Unicode escape emitted its fallback character instead of the character itself.
