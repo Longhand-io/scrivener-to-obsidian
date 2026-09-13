@@ -112,7 +112,9 @@ Run it as many times as you like; the source package is read-only to the tool.
 
 **Survives:** paragraphs, line breaks, bold, italic, underline, strikethrough, super and subscript, bulleted and numbered lists, tabs, web links, internal links, comments, footnotes, inline images, curly quotes and dashes, every Unicode character.
 
-**Does not:** Scrivener named styles, fonts, colours, alignment, and tables. These are recorded in the manifest as warnings instead of being silently mangled. Scrivener 1 and 2 projects are not read; open and save them in Scrivener 3 first.
+**Does not:** Scrivener named styles, fonts, colours, alignment, and tables. Scrivener 1 and 2 projects are not read; open and save them in Scrivener 3 first.
+
+**Two behaviours worth knowing.** Trash is skipped, including snapshots of trashed documents; `inspect` shows those separately, and `-include-trash` brings them along. When Scrivener left two snapshot files for one instant, one per time zone the Mac was in, the importer keeps one if the bytes are identical and both if they differ.
 
 ## Why another converter
 
@@ -120,7 +122,11 @@ The existing tools export text and folders. None carry snapshots across, and mos
 
 ## Status
 
-Pre-release. The RTF reader is written; binder parsing, layout, snapshot replay, and the CLI are in progress. The flag table above is the target interface.
+Pre-release, working. The full pipeline runs: binder, layout, frontmatter, footnotes and comments, links, inline images, research assets, snapshots to the files store and to git. Validated on fourteen real Scrivener 3 projects: document, snapshot, and asset counts matched the packages exactly, and word counts came within 0.16% of an independent RTF conversion. What remains for v0.1.0 is release binaries. Until then:
+
+```
+go install github.com/longhand-io/scrivener-to-obsidian/cmd/scriv2obsidian@main
+```
 
 ## License and affiliation
 
