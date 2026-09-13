@@ -47,6 +47,16 @@ Breaking changes to the spec or the CLI get a `!` after the type and a `BREAKING
 4. Keep every heading in the PR template. If a section has nothing to report, write "None."
 5. Every number in a PR body has a command behind it. "Should pass" is not a verdict; "not run (why)" is.
 
+## The FAQ
+
+`docs/FAQ.md` is the source of the site's FAQ page. After editing it, render the page into a checkout of `longhand-site` and commit both:
+
+```
+go run ./hack/faqgen -md docs/FAQ.md -html ../longhand-site/faq.html
+```
+
+CI runs the same tool with `-check` and fails on drift.
+
 ## What not to include
 
 No real names of collaborators, no paths from your machine, no text from a real manuscript. Test fixtures are synthetic. The maintainer greps for this before merging and will ask you to scrub.

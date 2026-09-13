@@ -1,14 +1,16 @@
 # FAQ
 
-Also published, with pictures, at https://longhand-io.github.io/longhand-site/faq.html. Keep the two in step.
+Things writers notice after importing a project, most of them not bugs. If yours is not here, ask in [Discussions](https://github.com/Longhand-io/longhand/discussions).
 
-Questions writers ask in the first week with an imported vault. If yours is not here, open a [discussion](https://github.com/Longhand-io/longhand/discussions).
+<!-- This file is the source of the site page https://longhand-io.github.io/longhand-site/faq.html. Render with: go run ./hack/faqgen -md docs/FAQ.md -html ../longhand-site/faq.html. CI fails if the site drifts. -->
 
 ## It looks like ordinary Obsidian. Where is the binder, the inspector, the snapshots tab?
 
 Those are the Longhand plugin, which is being built. The importer's only job is to move your writing into plain files with nothing lost. What you see now is the foundation: your manuscript as numbered Markdown files, your metadata in Properties, your research copied, your snapshots as files and as git history. The plugin reads exactly this layout, so nothing needs converting again when it arrives.
 
 ## A PDF shows "0 backlinks" with a red icon. Is something broken?
+
+<!-- figure: backlinks -->
 
 No. That chip is Obsidian's own counter: no note links to this file yet. The red icon is the toggle for showing backlinks inside the document, red because there are none to show. In Scrivener, a research file is only connected to a document if you bookmarked it or made an internal link to it, and most research items were never anchored to anything. Where a PDF or image had a synopsis or notes in Scrivener, the importer writes a note of the same name beside it that embeds the file, and that note counts as one backlink. Scrivener bookmarks come across as wikilinks in a note's Properties, which Obsidian also counts. Link a research file from a scene and the number changes.
 
