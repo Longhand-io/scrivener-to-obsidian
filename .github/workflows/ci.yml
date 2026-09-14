@@ -1,4 +1,5 @@
-# Build and test gate. Read-only token, pull_request trigger only, actions pinned by SHA.
+# Build and test gate, plus a dry run of the release build so hack/build-release.sh cannot rot.
+# Read-only token, actions pinned by SHA.
 name: CI
 on:
   pull_request:
@@ -23,3 +24,17 @@ jobs:
           go-version-file: go.mod
       - name: gate
         run: hack/ci.sh
+  release-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a # v5.2.0
+        with:
+          go-version-file: go.mod
+      - name: build every target
+        run: hack/build-release.sh v0.0.0-ci
+      - name: release binary matches go install on the fixture
+        run: |
+          tar -xzf dist/scriv2obsidian_v0.0.0-ci_linux_amd64.tar.gz -C "${RUNNER_TEMP}"
+          hack/verify-release.sh "${RUNNER_TEMP}/scriv2obsidian_v0.0.0-ci_linux_amd64/scriv2obsidian"
