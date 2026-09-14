@@ -2,7 +2,7 @@
 repo: scrivener-to-obsidian
 schema: phases/v1
 current_phase: I8
-updated: 2026-09-12
+updated: 2026-09-13
 updated_by: grassclaw
 
 phases:
@@ -154,11 +154,18 @@ phases:
     subphases:
       - id: I8.1
         title: Binaries and notes
+        status: in_progress
+        deliverables:
+          - { id: I8.1-d1, done: true, desc: "release workflow builds darwin/arm64, darwin/amd64, linux/amd64, linux/arm64, windows/amd64 with sha256 sums; CHANGELOG section becomes the release notes", note: "2026-09-13: .github/workflows/release.yml on a v* tag; hack/build-release.sh, hack/release-notes.sh; ci.yml dry-runs the build and the verification on every PR" }
+        acceptance:
+          - { id: I8.1-a1, met: false, check: "go install and the downloaded binary produce identical output on the fixture", method: e2e, note: "hack/verify-release.sh BINARY vX.Y.Z is the check; passed locally 2026-09-13 against a release-style build with a throwaway version (13 files identical under SOURCE_DATE_EPOCH); met when run against the published v0.1.0 archive" }
+      - id: I8.2
+        title: Cut v0.1.0
         status: planned
         deliverables:
-          - { id: I8.1-d1, done: false, desc: "release workflow builds darwin/arm64, darwin/amd64, linux/amd64, linux/arm64, windows/amd64 with sha256 sums; CHANGELOG section becomes the release notes" }
+          - { id: I8.2-d1, done: false, desc: "CHANGELOG heading renamed to v0.1.0 with the date; README install lines point at the release; tag pushed; release published with five archives and the checksum file" }
         acceptance:
-          - { id: I8.1-a1, met: false, check: "go install and the downloaded binary produce identical output on the fixture", method: e2e }
+          - { id: I8.2-a1, met: false, check: "shasum -c on the downloaded archive passes; go install ...@v0.1.0 prints v0.1.0", method: e2e }
 ---
 
 # Phase ledger

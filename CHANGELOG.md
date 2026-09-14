@@ -15,6 +15,9 @@ Not yet cut. Scope in `ROADMAP.md`.
 - Research PDFs, images, and other files copied with their binder position, with a sidecar note when they carry a synopsis or notes.
 - Snapshots written to the `_snapshots/` files store, and with `-git` replayed as commits with original dates and `Snapshot-*` trailers, followed by one import commit per project.
 - `convert`, `inspect`, `-dry-run`, and a `.scriv2obsidian.json` manifest per project.
+- `version` reports the release tag, or the module version under `go install`.
+- `SOURCE_DATE_EPOCH` fixes the import timestamp in `_Project.md`, the manifest, and the import commit, so two runs match byte for byte.
+- Release archives for macOS, Linux, and Windows with a sha256 checksum file, built by CI from a tag.
 - Validated on fourteen real projects; see the README.
 
 ### Fixed

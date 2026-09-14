@@ -59,6 +59,31 @@ go run ./hack/faqgen -md docs/FAQ.md -html ../longhand-site/faq.html
 
 CI runs the same tool with `-check` and fails on drift.
 
+## Cutting a release
+
+Releases are built by CI from a tag; nothing is built by hand. To cut `vX.Y.Z`:
+
+1. In `CHANGELOG.md`, rename `## Unreleased: vX.Y.Z` to `## vX.Y.Z (YYYY-MM-DD)` and delete the "Not yet cut" line. That section becomes the release notes verbatim; `hack/release-notes.sh vX.Y.Z` prints what will be published and fails while the heading still says Unreleased.
+2. Update the README's install lines and Status section, and the ledger row in `docs/PHASES.md`, in the same PR.
+3. Merge, then tag the squash commit on `main` and push the tag:
+
+   ```
+   git tag -s vX.Y.Z -m "vX.Y.Z"
+   git push origin vX.Y.Z
+   ```
+
+   `release.yml` runs the gate, builds darwin arm64 and amd64, linux amd64 and arm64, and windows amd64 with `hack/build-release.sh`, and publishes the archives with a sha256 checksum file.
+4. Download one archive, check it against the checksum file, and run the acceptance check, which converts the fixture with the downloaded binary and with a `go install` of the tag and diffs the two vaults:
+
+   ```
+   shasum -a 256 -c scriv2obsidian_vX.Y.Z_checksums.txt --ignore-missing
+   hack/verify-release.sh ./scriv2obsidian vX.Y.Z
+   ```
+
+   Record the result in the ledger.
+
+The version string comes from the tag through `-ldflags`; a `go install` build reads it from the module, and a plain `go build` prints `dev`. `SOURCE_DATE_EPOCH` fixes the import timestamp so two runs match byte for byte, which the verification depends on; `hack/ci.sh`-adjacent CI runs the same check on every PR with a throwaway version.
+
 ## What not to include
 
 No real names of collaborators, no paths from your machine, no text from a real manuscript. Test fixtures are synthetic. The maintainer greps for this before merging and will ask you to scrub.
