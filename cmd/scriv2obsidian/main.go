@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"strings"
 	"text/tabwriter"
 
@@ -16,7 +17,19 @@ import (
 	"github.com/longhand-io/scrivener-to-obsidian/internal/scrivx"
 )
 
-const version = "0.1.0-dev"
+// version is set by the release build with -ldflags "-X main.version=v0.1.0".
+// A go install build reads the module version instead; anything else is "dev".
+var version string
+
+func versionString() string {
+	if version != "" {
+		return version
+	}
+	if bi, ok := debug.ReadBuildInfo(); ok && bi.Main.Version != "" && bi.Main.Version != "(devel)" {
+		return bi.Main.Version
+	}
+	return "dev"
+}
 
 func main() {
 	if len(os.Args) < 2 {
@@ -29,7 +42,7 @@ func main() {
 	case "inspect":
 		os.Exit(runInspect(os.Args[2:]))
 	case "version", "-v", "--version":
-		fmt.Println("scriv2obsidian", version)
+		fmt.Println("scriv2obsidian", versionString())
 	case "help", "-h", "--help":
 		usage()
 	default:
