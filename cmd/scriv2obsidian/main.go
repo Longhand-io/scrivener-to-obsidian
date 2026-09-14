@@ -10,8 +10,10 @@ import (
 	"os"
 	"path/filepath"
 	"runtime/debug"
+	"strconv"
 	"strings"
 	"text/tabwriter"
+	"time"
 
 	"github.com/longhand-io/scrivener-to-obsidian/internal/convert"
 	"github.com/longhand-io/scrivener-to-obsidian/internal/scrivx"
@@ -69,7 +71,8 @@ Flags for convert:
   -author "N <e>"   git identity for the commits (defaults to your git config)
   -dry-run          print the plan and write nothing
 
-The source package is never modified.
+The source package is never modified. SOURCE_DATE_EPOCH, if set, fixes the
+import timestamp written to _Project.md, the manifest, and the import commit.
 `)
 }
 
@@ -152,6 +155,14 @@ func runConvert(args []string) int {
 		return 1
 	}
 	opts.OutDir = abs
+	if epoch := os.Getenv("SOURCE_DATE_EPOCH"); epoch != "" {
+		secs, err := strconv.ParseInt(epoch, 10, 64)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "convert: SOURCE_DATE_EPOCH %q is not a number of seconds\n", epoch)
+			return 2
+		}
+		opts.Now = time.Unix(secs, 0).UTC()
+	}
 	code := 0
 	for _, path := range fs.Args() {
 		p, err := scrivx.Open(path)
