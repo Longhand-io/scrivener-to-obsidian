@@ -1,6 +1,7 @@
 ---
 repo: scrivener-to-obsidian
 schema: phases/v1
+program: spec-and-importer
 current_phase: I8
 updated: 2026-09-13
 updated_by: grassclaw
