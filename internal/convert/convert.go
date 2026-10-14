@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
-// Package convert turns a parsed Scrivener project into a vault that follows the Longhand spec.
+// Package convert turns a parsed Scrivener project into a vault that follows the Nibwrite spec.
 package convert
 
 import (
@@ -13,9 +13,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/longhand-io/scrivener-to-obsidian/internal/gitlog"
-	"github.com/longhand-io/scrivener-to-obsidian/internal/rtf"
-	"github.com/longhand-io/scrivener-to-obsidian/internal/scrivx"
+	"github.com/nibwrite/scrivener-to-obsidian/internal/gitlog"
+	"github.com/nibwrite/scrivener-to-obsidian/internal/rtf"
+	"github.com/nibwrite/scrivener-to-obsidian/internal/scrivx"
 )
 
 // Options control a conversion.
@@ -47,7 +47,7 @@ type Manifest struct {
 	Source      string         `json:"source"`
 	Creator     string         `json:"creator,omitempty"`
 	Generated   string         `json:"generated"`
-	Spec        int            `json:"longhand"`
+	Spec        int            `json:"nibwrite"`
 	Counts      map[string]int `json:"counts"`
 	Items       []ManifestItem `json:"items"`
 	Warnings    []string       `json:"warnings"`
@@ -587,7 +587,7 @@ func notesCallout(notes string) string {
 
 func projectNote(project *scrivx.Project, opts Options) string {
 	f := []Field{
-		{"longhand", 1},
+		{"nibwrite", 1},
 		{"title", project.Name},
 		{"source", "scrivener"},
 		{"source_creator", project.Creator},
@@ -596,7 +596,7 @@ func projectNote(project *scrivx.Project, opts Options) string {
 		{"statuses", orderedValues(project.Statuses)},
 		{"keywords", orderedValues(project.Keywords)},
 	}
-	return Frontmatter(f) + "\n# " + project.Name + "\n\nImported from Scrivener with scriv2obsidian. This note marks the project root; the Longhand plugin reads it, and the importer's manifest is beside it in `.scriv2obsidian.json`.\n"
+	return Frontmatter(f) + "\n# " + project.Name + "\n\nImported from Scrivener with scriv2obsidian. This note marks the project root; the Nibwrite plugin reads it, and the importer's manifest is beside it in `.scriv2obsidian.json`.\n"
 }
 
 func orderedValues(m map[string]string) []string {

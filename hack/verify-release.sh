@@ -11,7 +11,7 @@ work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
 gobin="$work/gobin"
 if [ -n "$version" ]; then
-  GOBIN="$gobin" go install "github.com/longhand-io/scrivener-to-obsidian/cmd/scriv2obsidian@$version"
+  GOBIN="$gobin" go install "github.com/nibwrite/scrivener-to-obsidian/cmd/scriv2obsidian@$version"
 else
   GOBIN="$gobin" go install ./cmd/scriv2obsidian
 fi

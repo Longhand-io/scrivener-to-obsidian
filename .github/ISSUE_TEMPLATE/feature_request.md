@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Something Longhand should do
+about: Something Nibwrite should do
 labels: kind/feature
 ---
 
@@ -12,6 +12,6 @@ labels: kind/feature
 
 ### What it would store
 
-<!-- Longhand keeps everything as files and frontmatter. Say what fields or files this needs, or "nothing new". -->
+<!-- Nibwrite keeps everything as files and frontmatter. Say what fields or files this needs, or "nothing new". -->
 
 ### Alternatives considered

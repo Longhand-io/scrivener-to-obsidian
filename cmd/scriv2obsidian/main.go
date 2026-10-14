@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
-// Command scriv2obsidian converts Scrivener 3 projects into Longhand vaults.
+// Command scriv2obsidian converts Scrivener 3 projects into Nibwrite vaults.
 package main
 
 import (
@@ -15,8 +15,8 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/longhand-io/scrivener-to-obsidian/internal/convert"
-	"github.com/longhand-io/scrivener-to-obsidian/internal/scrivx"
+	"github.com/nibwrite/scrivener-to-obsidian/internal/convert"
+	"github.com/nibwrite/scrivener-to-obsidian/internal/scrivx"
 )
 
 // version is set by the release build with -ldflags "-X main.version=v0.1.0".
@@ -55,7 +55,7 @@ func main() {
 }
 
 func usage() {
-	fmt.Fprint(os.Stderr, `scriv2obsidian: move Scrivener 3 projects into a Longhand vault, history included.
+	fmt.Fprint(os.Stderr, `scriv2obsidian: move Scrivener 3 projects into a Nibwrite vault, history included.
 
 Usage:
   scriv2obsidian inspect PROJECT.scriv [PROJECT.scriv ...]

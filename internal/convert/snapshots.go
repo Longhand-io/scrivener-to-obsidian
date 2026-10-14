@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 package convert
 
@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/longhand-io/scrivener-to-obsidian/internal/scrivx"
+	"github.com/nibwrite/scrivener-to-obsidian/internal/scrivx"
 )
 
 // Snapshot is one saved version of one document.

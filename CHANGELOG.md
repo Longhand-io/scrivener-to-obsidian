@@ -6,11 +6,15 @@ User-visible changes, newest first. Each released section is the text published 
 
 Not yet cut. Scope in `ROADMAP.md`.
 
+### Changed
+
+- Renamed from Longhand to Nibwrite: module path `github.com/nibwrite/scrivener-to-obsidian`, project notes are written with `nibwrite: 1`. The binary is still `scriv2obsidian`.
+
 ### Added
 
 - RTF reader for Scrivener's Cocoa RTF, with hyperlink fields preserved and a poetry mode.
 - Binder parser: hierarchy, titles, types, labels, statuses, nested keywords, custom metadata, include-in-compile, dates, bookmarks, trash detection.
-- Layout and frontmatter per the Longhand spec: numbered folders and files, folder notes, project note, every document field, notes callout, `-no-prefix`.
+- Layout and frontmatter per the Nibwrite spec: numbered folders and files, folder notes, project note, every document field, notes callout, `-no-prefix`.
 - Footnotes to `[^n]`, comments to `%% %%`, internal links to wikilinks with the original text, web links kept, inline images to `_attachments/`.
 - Research PDFs, images, and other files copied with their binder position, with a sidecar note when they carry a synopsis or notes.
 - Snapshots written to the `_snapshots/` files store, and with `-git` replayed as commits with original dates and `Snapshot-*` trailers, followed by one import commit per project.

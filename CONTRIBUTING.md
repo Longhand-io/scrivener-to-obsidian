@@ -25,7 +25,7 @@ Every commit must carry a `Signed-off-by:` line matching its author, which certi
 git commit -s
 ```
 
-That is the whole contributor agreement. There is no CLA, and no real-name requirement: sign off with a name you use consistently and an email that reaches you. Contributions are licensed under Apache-2.0 and the copyright stays with you; the NOTICE file credits the Longhand Authors collectively.
+That is the whole contributor agreement. There is no CLA, and no real-name requirement: sign off with a name you use consistently and an email that reaches you. Contributions are licensed under Apache-2.0 and the copyright stays with you; the NOTICE file credits the Nibwrite Authors collectively.
 
 Every Go file starts with the SPDX line; `hack/ci.sh` checks it.
 
@@ -51,10 +51,10 @@ Breaking changes to the spec or the CLI get a `!` after the type and a `BREAKING
 
 ## The FAQ
 
-`docs/FAQ.md` is the source of the site's FAQ page. After editing it, render the page into a checkout of `longhand-site` and commit both:
+`docs/FAQ.md` is the source of the site's FAQ page. After editing it, render the page into a checkout of `nibwrite-site` and commit both:
 
 ```
-go run ./hack/faqgen -md docs/FAQ.md -html ../longhand-site/faq.html
+go run ./hack/faqgen -md docs/FAQ.md -html ../nibwrite-site/faq.html
 ```
 
 CI runs the same tool with `-check` and fails on drift.

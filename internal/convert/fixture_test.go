@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 package convert
 
@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/longhand-io/scrivener-to-obsidian/internal/testfixture"
+	"github.com/nibwrite/scrivener-to-obsidian/internal/testfixture"
 )
 
 // buildFixture writes the synthetic package from internal/testfixture into a temp dir.
@@ -109,7 +109,7 @@ func TestConvertFixture(t *testing.T) {
 		t.Errorf("snapshot content: %s", snap)
 	}
 	proj := read(t, filepath.Join(pd, "_Project.md"))
-	for _, want := range []string{"longhand: 1", "title: \"Fixture Novel\"", "source_creator: \"SCRMAC-3.5.2-17486\"", "  - \"Red\"", "  - \"First Draft\"", "  - \"Winter Fair\""} {
+	for _, want := range []string{"nibwrite: 1", "title: \"Fixture Novel\"", "source_creator: \"SCRMAC-3.5.2-17486\"", "  - \"Red\"", "  - \"First Draft\"", "  - \"Winter Fair\""} {
 		if !strings.Contains(proj, want) {
 			t.Errorf("project note missing %q", want)
 		}

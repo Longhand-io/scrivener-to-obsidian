@@ -4,7 +4,7 @@ Turn a Scrivener project into an Obsidian vault **without losing your history.**
 
 One static binary. Go standard library only. No pandoc, no network, and your `.scriv` package is never touched.
 
-> Part of [Longhand](https://longhand-io.github.io/longhand-site/), a writing studio for Obsidian. This importer writes the Longhand vault spec, so the plugin picks your projects up as-is. It is also useful on its own.
+> Part of [Nibwrite](https://nibwrite.github.io/nibwrite-site/), a writing studio for Obsidian. This importer writes the Nibwrite vault spec, so the plugin picks your projects up as-is. It is also useful on its own.
 
 ## What happens to your project
 
@@ -80,12 +80,12 @@ Snapshot-Source: scrivener
 Word-Count: 2417
 ```
 
-`git log --grep="Snapshot-Doc-Id: 9B2C..."` lists one document's snapshots across renames. The Longhand plugin shows the same list in a sidebar with side-by-side compare and restore.
+`git log --grep="Snapshot-Doc-Id: 9B2C..."` lists one document's snapshots across renames. The Nibwrite plugin shows the same list in a sidebar with side-by-side compare and restore.
 
 ## Quick start
 
 ```sh
-go install github.com/longhand-io/scrivener-to-obsidian/cmd/scriv2obsidian@latest
+go install github.com/nibwrite/scrivener-to-obsidian/cmd/scriv2obsidian@latest
 
 # see what is inside before you convert anything
 scriv2obsidian inspect ~/Dropbox/Apps/Scrivener/Novel.scriv
@@ -122,16 +122,16 @@ Run it as many times as you like; the source package is read-only to the tool.
 
 ## Why another converter
 
-The existing tools export text and folders. None carry snapshots across, and most drop notes, footnotes, and links. This one is built around a small written [vault spec](https://github.com/Longhand-io/longhand/blob/main/docs/spec.md) so the output is usable by any tool, with or without a plugin, and it reads RTF itself because pandoc's RTF reader silently deletes hyperlink fields, which is where Scrivener keeps comments and internal links.
+The existing tools export text and folders. None carry snapshots across, and most drop notes, footnotes, and links. This one is built around a small written [vault spec](https://github.com/nibwrite/nibwrite/blob/main/docs/spec.md) so the output is usable by any tool, with or without a plugin, and it reads RTF itself because pandoc's RTF reader silently deletes hyperlink fields, which is where Scrivener keeps comments and internal links.
 
 ## Status
 
 Pre-release, working. The full pipeline runs: binder, layout, frontmatter, footnotes and comments, links, inline images, research assets, snapshots to the files store and to git. Validated on fourteen real Scrivener 3 projects: document, snapshot, and asset counts matched the packages exactly, and word counts came within 0.16% of an independent RTF conversion. What remains for v0.1.0 is release binaries. Until then:
 
 ```
-go install github.com/longhand-io/scrivener-to-obsidian/cmd/scriv2obsidian@main
+go install github.com/nibwrite/scrivener-to-obsidian/cmd/scriv2obsidian@main
 ```
 
 ## License and affiliation
 
-Apache License 2.0, copyright 0xSpectra LLC and the Longhand Authors; see NOTICE. An independent project, not affiliated with or endorsed by Literature & Latte, the makers of Scrivener, or by Obsidian. Those names are trademarks of their respective owners.
+Apache License 2.0, copyright 0xSpectra LLC and the Nibwrite Authors; see NOTICE. An independent project, not affiliated with or endorsed by Literature & Latte, the makers of Scrivener, or by Obsidian. Those names are trademarks of their respective owners.
