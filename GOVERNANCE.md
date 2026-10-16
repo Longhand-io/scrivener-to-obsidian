@@ -21,7 +21,7 @@ Adding or removing a maintainer, or changing this document, requires two-thirds 
 
 ## What governance does not cover
 
-Nib, compile presets, and relief maps are paid and developed outside this repository. Their existence does not change anything above: nothing in a paid module may read a field that open modules cannot, and the spec stays open.
+Gall, compile presets, and relief maps are paid and developed outside this repository. Their existence does not change anything above: nothing in a paid module may read a field that open modules cannot, and the spec stays open.
 
 ## Code of Conduct
 
