@@ -12,6 +12,6 @@ labels: kind/bug
 
 ### Versions
 
-- Nibwrite or scriv2obsidian version:
+- Oakfall or scriv2obsidian version:
 - Obsidian version and platform, or Go version:
 - Sync setup, if relevant (iCloud, Dropbox, Obsidian Sync, git):

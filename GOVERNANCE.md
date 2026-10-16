@@ -1,6 +1,6 @@
 # Governance
 
-> Status: bootstrapping. Nibwrite has one founding maintainer. This document describes the model the project grows into; the thresholds below become meaningful as maintainers are added. [MAINTAINERS.md](MAINTAINERS.md) is the current reality.
+> Status: bootstrapping. Oakfall has one founding maintainer. This document describes the model the project grows into; the thresholds below become meaningful as maintainers are added. [MAINTAINERS.md](MAINTAINERS.md) is the current reality.
 
 ## Roles
 

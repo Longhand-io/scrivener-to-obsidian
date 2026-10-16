@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Something Nibwrite should do
+about: Something Oakfall should do
 labels: kind/feature
 ---
 
@@ -12,6 +12,6 @@ labels: kind/feature
 
 ### What it would store
 
-<!-- Nibwrite keeps everything as files and frontmatter. Say what fields or files this needs, or "nothing new". -->
+<!-- Oakfall keeps everything as files and frontmatter. Say what fields or files this needs, or "nothing new". -->
 
 ### Alternatives considered

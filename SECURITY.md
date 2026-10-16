@@ -8,7 +8,7 @@ Use this repository's **Security** tab and choose **Report a vulnerability**. Th
 
 ## What counts
 
-Nibwrite runs inside Obsidian with access to the vault. Anything that lets a note, a theme, a template, an imported `.scriv` package, or a map file read or write outside the vault, execute code, or reach the network without the writer's action is in scope. So is anything that makes a snapshot or restore lose data.
+Oakfall runs inside Obsidian with access to the vault. Anything that lets a note, a theme, a template, an imported `.scriv` package, or a map file read or write outside the vault, execute code, or reach the network without the writer's action is in scope. So is anything that makes a snapshot or restore lose data.
 
 ## Response
 

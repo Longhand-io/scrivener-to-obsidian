@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Package testfixture writes a synthetic Scrivener 3 package that exercises
 // every feature the importer handles. It contains no text from any real

@@ -1,12 +1,12 @@
 # FAQ
 
-Things writers notice after importing a project, most of them not bugs. If yours is not here, ask in [Discussions](https://github.com/nibwrite/nibwrite/discussions).
+Things writers notice after importing a project, most of them not bugs. If yours is not here, ask in [Discussions](https://github.com/oakfall/oakfall/discussions).
 
-<!-- This file is the source of the site page https://nibwrite.github.io/nibwrite-site/faq.html. Render with: go run ./hack/faqgen -md docs/FAQ.md -html ../nibwrite-site/faq.html. CI fails if the site drifts. -->
+<!-- This file is the source of the site page https://oakfall.github.io/oakfall-site/faq.html. Render with: go run ./hack/faqgen -md docs/FAQ.md -html ../oakfall-site/faq.html. CI fails if the site drifts. -->
 
 ## It looks like ordinary Obsidian. Where is the binder, the inspector, the snapshots tab?
 
-Those are the Nibwrite plugin, which is being built. The importer's only job is to move your writing into plain files with nothing lost. What you see now is the foundation: your manuscript as numbered Markdown files, your metadata in Properties, your research copied, your snapshots as files and as git history. The plugin reads exactly this layout, so nothing needs converting again when it arrives.
+Those are the Oakfall plugin, which is being built. The importer's only job is to move your writing into plain files with nothing lost. What you see now is the foundation: your manuscript as numbered Markdown files, your metadata in Properties, your research copied, your snapshots as files and as git history. The plugin reads exactly this layout, so nothing needs converting again when it arrives.
 
 ## A PDF shows "0 backlinks" with a red icon. Is something broken?
 
@@ -20,7 +20,7 @@ If any image is missing, that is a bug; please report it. One was found and fixe
 
 ## Why are files numbered? Can I turn that off?
 
-Obsidian sorts the file tree by name, and your manuscript has an order that is not alphabetical. The two-digit prefix keeps binder order visible everywhere, including on a phone with no plugin. If you would rather not see numbers, run with `-no-prefix` and the order is written to an `order` field in each file's Properties instead. The Nibwrite plugin honours either.
+Obsidian sorts the file tree by name, and your manuscript has an order that is not alphabetical. The two-digit prefix keeps binder order visible everywhere, including on a phone with no plugin. If you would rather not see numbers, run with `-no-prefix` and the order is written to an `order` field in each file's Properties instead. The Oakfall plugin honours either.
 
 ## There is a note inside a folder with the folder's own name. What is it?
 
@@ -44,11 +44,11 @@ By design. Markdown has emphasis and headings, not fonts and colours, and Scrive
 
 ## Where are the snapshots?
 
-Two places, the same content. `_snapshots/<document id>/` inside each project holds one Markdown file per snapshot, named by date and the title you gave it, and syncs with the vault to every device. If you converted with `-git`, each snapshot is also a commit with its original date, which the Nibwrite Snapshots module will show as a list with compare and restore. Until then, any git client shows them.
+Two places, the same content. `_snapshots/<document id>/` inside each project holds one Markdown file per snapshot, named by date and the title you gave it, and syncs with the vault to every device. If you converted with `-git`, each snapshot is also a commit with its original date, which the Oakfall Snapshots module will show as a list with compare and restore. Until then, any git client shows them.
 
 ## Can I put the vault in iCloud or Dropbox?
 
-The files, yes. The git repository, not directly: a `.git` folder inside a cloud-synced folder gets corrupted. If you used `-git`, either keep the vault outside cloud sync or move the repository out with `git init --separate-git-dir`; the Nibwrite plugin does this for you. See [Sync and history](https://github.com/nibwrite/nibwrite/blob/main/docs/sync-and-history.md).
+The files, yes. The git repository, not directly: a `.git` folder inside a cloud-synced folder gets corrupted. If you used `-git`, either keep the vault outside cloud sync or move the repository out with `git init --separate-git-dir`; the Oakfall plugin does this for you. See [Sync and history](https://github.com/oakfall/oakfall/blob/main/docs/sync-and-history.md).
 
 ## Can I run the importer again?
 

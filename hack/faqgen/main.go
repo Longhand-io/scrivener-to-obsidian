@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
-// faqgen renders docs/FAQ.md into the FAQ region of the Nibwrite site page, or checks that it already matches.
+// faqgen renders docs/FAQ.md into the FAQ region of the Oakfall site page, or checks that it already matches.
 //
-//	go run ./hack/faqgen -md docs/FAQ.md -html ../nibwrite-site/faq.html            # rewrite the region
-//	go run ./hack/faqgen -md docs/FAQ.md -html ../nibwrite-site/faq.html -check     # exit 1 on drift
+//	go run ./hack/faqgen -md docs/FAQ.md -html ../oakfall-site/faq.html            # rewrite the region
+//	go run ./hack/faqgen -md docs/FAQ.md -html ../oakfall-site/faq.html -check     # exit 1 on drift
 //
 // The markdown subset: "## " headings, paragraphs, `code`, [text](url), and a line
 // "<!-- figure: name -->" which inlines <figure-dir>/name.html from the site repo.
@@ -164,7 +164,7 @@ func main() {
 			fmt.Println("faq: site page matches docs/FAQ.md")
 			return
 		}
-		fmt.Fprintln(os.Stderr, "faq: DRIFT. The site page does not match docs/FAQ.md. Regenerate with: go run ./hack/faqgen -md docs/FAQ.md -html <path to nibwrite-site/faq.html>")
+		fmt.Fprintln(os.Stderr, "faq: DRIFT. The site page does not match docs/FAQ.md. Regenerate with: go run ./hack/faqgen -md docs/FAQ.md -html <path to oakfall-site/faq.html>")
 		os.Exit(1)
 	}
 	out := append(append(append([]byte{}, page[:i]...), []byte(region)...), page[j+len(endMark):]...)

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Command mkfixture writes the synthetic Scrivener package into a directory,
 // so scripts outside go test can run the CLI against it.
@@ -10,7 +10,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/nibwrite/scrivener-to-obsidian/internal/testfixture"
+	"github.com/oakfall/scrivener-to-obsidian/internal/testfixture"
 )
 
 func main() {
