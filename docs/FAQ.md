@@ -2,7 +2,7 @@
 
 Things writers notice after importing a project, most of them not bugs. If yours is not here, ask in [Discussions](https://github.com/oakfall/oakfall/discussions).
 
-<!-- This file is the source of the site page https://oakfall.github.io/oakfall-site/faq.html. Render with: go run ./hack/faqgen -md docs/FAQ.md -html ../oakfall-site/faq.html. CI fails if the site drifts. -->
+<!-- This file is the source of the site page https://oakfall.app/faq.html. Render with: go run ./hack/faqgen -md docs/FAQ.md -html ../oakfall-site/faq.html. CI fails if the site drifts. -->
 
 ## It looks like ordinary Obsidian. Where is the binder, the inspector, the snapshots tab?
 
